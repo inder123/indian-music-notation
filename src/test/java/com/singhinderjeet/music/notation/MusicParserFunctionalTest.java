@@ -39,6 +39,7 @@ public class MusicParserFunctionalTest {
         Raga raga = parser.parseRaga(reader);
 
         assertEquals("Jaitsree", raga.getName());
+        assertEquals(60, raga.getBpm());
         assertEquals(MusicNote.SA_UPPER, raga.getAaroha().notes().get(7));
         assertEquals(MusicNote.DHA_KOMAL, raga.getAvroha().notes().get(4));
         assertEquals(MusicNote.SA, raga.getTheme().get(0).notes().get(1));

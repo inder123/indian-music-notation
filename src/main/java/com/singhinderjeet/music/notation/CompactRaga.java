@@ -46,7 +46,7 @@ final class CompactRaga {
     }
 
     public Raga toRaga() {
-        return new Raga(name, toNoteSequence(aaroha), toNoteSequence(avroha), toNoteSequenceList(theme), toNoteSequenceList(alaap));
+        return new Raga(name, bpm, toNoteSequence(aaroha), toNoteSequence(avroha), toNoteSequenceList(theme), toNoteSequenceList(alaap));
     }
 
     private NoteSequence toNoteSequence(String notes) {

@@ -25,14 +25,16 @@ import java.util.List;
  * @author Inderjeet Singh
  */
 public class Raga {
-    @SerializedName("name") private final String name;
-    @SerializedName("aaroha") private final NoteSequence aaroha;
-    @SerializedName("avroha") private final NoteSequence avroha;
-    @SerializedName("theme") private final List<NoteSequence> theme;
-    @SerializedName("alaap") private final List<NoteSequence> alaap;
+    private final String name;
+    private final int bpm;
+    private final NoteSequence aaroha;
+    private final NoteSequence avroha;
+    private final List<NoteSequence> theme;
+    private final List<NoteSequence> alaap;
 
-    public Raga(String name, NoteSequence aaroha, NoteSequence avroha, List<NoteSequence> theme, List<NoteSequence> alaap) {
+    public Raga(String name, int bpm, NoteSequence aaroha, NoteSequence avroha, List<NoteSequence> theme, List<NoteSequence> alaap) {
         this.name = name;
+        this.bpm = bpm;
         this.aaroha = aaroha;
         this.avroha = avroha;
         this.theme = theme;
@@ -41,6 +43,10 @@ public class Raga {
 
     public String getName() {
         return name;
+    }
+
+    public int getBpm() {
+        return bpm;
     }
 
     public NoteSequence getAaroha() {
