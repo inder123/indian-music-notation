@@ -15,13 +15,7 @@
  */
 package com.singhinderjeet.music.notation;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.google.gson.annotations.SerializedName;
-import com.singhinderjeet.music.notation.model.Note;
-import com.singhinderjeet.music.notation.model.NoteSequence;
-import com.singhinderjeet.music.notation.model.Raga;
 
 /**
  * Representation of the serialized form of a Raga
@@ -30,14 +24,16 @@ import com.singhinderjeet.music.notation.model.Raga;
  */
 final class CompactRaga {
     @SerializedName("name") final String name;
+    @SerializedName("thaat") final Thaat thaat;
     @SerializedName("bpm") final int bpm;
     @SerializedName("aaroha") final String aaroha;
     @SerializedName("avroha") final String avroha;
     @SerializedName("theme") final String theme;
     @SerializedName("alaap") final String alaap;
 
-    public CompactRaga(String name, int bpm, String aaroha, String avroha, String theme, String alaap) {
+    public CompactRaga(String name, Thaat thaat, int bpm, String aaroha, String avroha, String theme, String alaap) {
         this.name = name;
+        this.thaat = thaat;
         this.bpm = bpm;
         this.aaroha = aaroha;
         this.avroha = avroha;
@@ -46,25 +42,6 @@ final class CompactRaga {
     }
 
     public Raga toRaga() {
-        return new Raga(name, bpm, toNoteSequenceList(aaroha), toNoteSequenceList(avroha), toNoteSequenceList(theme), toNoteSequenceList(alaap));
-    }
-
-    private NoteSequence toNoteSequence(String notes) {
-        if (notes == null || notes.isEmpty()) return null;
-        NoteSequence.Builder builder = new NoteSequence.Builder();
-        for (String part : notes.split(" ")) {
-            Note note = Note.valueOf(part);
-            if (note != null) builder.add(note);
-        }
-        return builder.build();
-    }
-
-    private List<NoteSequence> toNoteSequenceList(String notesList) {
-        List<NoteSequence> list = new ArrayList<>();
-        for (String notes : notesList.split(",")) {
-            NoteSequence sequence = toNoteSequence(notes);
-            if (sequence != null && !sequence.isEmpty()) list.add(sequence);
-        }
-        return list;
+        return new Raga(name, thaat, bpm, Utils.toNoteSequenceList(aaroha), Utils.toNoteSequenceList(avroha), Utils.toNoteSequenceList(theme), Utils.toNoteSequenceList(alaap));
     }
 }

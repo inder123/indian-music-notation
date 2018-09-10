@@ -18,7 +18,6 @@ package com.singhinderjeet.music.notation;
 import java.io.Reader;
 
 import com.google.gson.Gson;
-import com.singhinderjeet.music.notation.model.Raga;
 
 /**
  * A class to serialize or deserialize Hindustani ragas

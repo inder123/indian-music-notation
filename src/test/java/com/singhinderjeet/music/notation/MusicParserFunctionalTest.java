@@ -23,9 +23,6 @@ import java.io.Reader;
 
 import org.junit.Test;
 
-import com.singhinderjeet.music.notation.model.MusicNote;
-import com.singhinderjeet.music.notation.model.Raga;
-
 /**
  * Functional tests for {@link MusicParser}
  *
@@ -53,6 +50,7 @@ public class MusicParserFunctionalTest {
         Raga raga = parser.parseRaga(reader);
 
         assertEquals("Bairari", raga.getName());
+        assertEquals(Thaat.MARWA, raga.getThaat());
         assertEquals(60, raga.getBpm());
         assertEquals(MusicNote.GA, raga.getAaroha().get(0).notes().get(5));
         assertEquals(MusicNote.MA_TEEVRA, raga.getAvroha().get(2).notes().get(2));

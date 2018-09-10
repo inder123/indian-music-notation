@@ -10,4 +10,4 @@ repositories {
 }
 ```
 
-In your app build.gradle, add:  `compile "com.github.inder123:indian-music-notation:1.0.2"`
+In your app build.gradle, add:  `compile "com.github.inder123:indian-music-notation:1.0.3"`

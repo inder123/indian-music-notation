@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.singhinderjeet.music.notation.model;
+package com.singhinderjeet.music.notation;
 
 import java.util.List;
 
@@ -24,14 +24,16 @@ import java.util.List;
  */
 public class Raga {
     private final String name;
+    private final Thaat thaat;
     private final int bpm;
     private final List<NoteSequence> aaroha;
     private final List<NoteSequence> avroha;
     private final List<NoteSequence> theme;
     private final List<NoteSequence> alaap;
 
-    public Raga(String name, int bpm, List<NoteSequence> aaroha, List<NoteSequence> avroha, List<NoteSequence> theme, List<NoteSequence> alaap) {
+    public Raga(String name, Thaat thaat, int bpm, List<NoteSequence> aaroha, List<NoteSequence> avroha, List<NoteSequence> theme, List<NoteSequence> alaap) {
         this.name = name;
+        this.thaat = thaat;
         this.bpm = bpm;
         this.aaroha = aaroha;
         this.avroha = avroha;
@@ -61,5 +63,9 @@ public class Raga {
 
     public List<NoteSequence> getAlaap() {
         return alaap;
+    }
+
+    public Thaat getThaat() {
+        return thaat;
     }
 }
