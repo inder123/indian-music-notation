@@ -15,8 +15,6 @@
  */
 package com.singhinderjeet.music.notation.model;
 
-import com.google.gson.annotations.SerializedName;
-
 import java.util.List;
 
 /**
@@ -27,12 +25,12 @@ import java.util.List;
 public class Raga {
     private final String name;
     private final int bpm;
-    private final NoteSequence aaroha;
-    private final NoteSequence avroha;
+    private final List<NoteSequence> aaroha;
+    private final List<NoteSequence> avroha;
     private final List<NoteSequence> theme;
     private final List<NoteSequence> alaap;
 
-    public Raga(String name, int bpm, NoteSequence aaroha, NoteSequence avroha, List<NoteSequence> theme, List<NoteSequence> alaap) {
+    public Raga(String name, int bpm, List<NoteSequence> aaroha, List<NoteSequence> avroha, List<NoteSequence> theme, List<NoteSequence> alaap) {
         this.name = name;
         this.bpm = bpm;
         this.aaroha = aaroha;
@@ -49,11 +47,11 @@ public class Raga {
         return bpm;
     }
 
-    public NoteSequence getAaroha() {
+    public List<NoteSequence> getAaroha() {
         return aaroha;
     }
 
-    public NoteSequence getAvroha() {
+    public List<NoteSequence> getAvroha() {
         return avroha;
     }
 

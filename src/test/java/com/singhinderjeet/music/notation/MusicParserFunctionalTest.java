@@ -33,16 +33,30 @@ import com.singhinderjeet.music.notation.model.Raga;
  */
 public class MusicParserFunctionalTest {
     @Test
-    public void test() {
+    public void testChangeSpeedWithinSection() {
         Reader reader = new BufferedReader(new InputStreamReader(MusicParserFunctionalTest.class.getResourceAsStream("/jaitsree.json")));
         MusicParser parser = new MusicParser();
         Raga raga = parser.parseRaga(reader);
 
         assertEquals("Jaitsree", raga.getName());
         assertEquals(60, raga.getBpm());
-        assertEquals(MusicNote.SA_UPPER, raga.getAaroha().notes().get(7));
-        assertEquals(MusicNote.DHA_KOMAL, raga.getAvroha().notes().get(4));
+        assertEquals(MusicNote.SA_UPPER, raga.getAaroha().get(0).notes().get(7));
+        assertEquals(MusicNote.DHA_KOMAL, raga.getAvroha().get(0).notes().get(4));
         assertEquals(MusicNote.SA, raga.getTheme().get(0).notes().get(1));
         assertEquals(MusicNote.SA, raga.getAlaap().get(5).notes().get(3));
+    }
+
+    @Test
+    public void testMultiSequenceAarohaAvroha() {
+        Reader reader = new BufferedReader(new InputStreamReader(MusicParserFunctionalTest.class.getResourceAsStream("/bairari.json")));
+        MusicParser parser = new MusicParser();
+        Raga raga = parser.parseRaga(reader);
+
+        assertEquals("Bairari", raga.getName());
+        assertEquals(60, raga.getBpm());
+        assertEquals(MusicNote.GA, raga.getAaroha().get(0).notes().get(5));
+        assertEquals(MusicNote.MA_TEEVRA, raga.getAvroha().get(2).notes().get(2));
+        assertEquals(MusicNote.MA_TEEVRA, raga.getTheme().get(1).notes().get(1));
+        assertEquals(MusicNote.RE_KOMAL_UPPER, raga.getAlaap().get(11).notes().get(1));
     }
 }
