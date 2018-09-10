@@ -3,6 +3,6 @@
   "bpm": 60,
   "aaroha": "bb b/2 s g M p n su",
   "avroha": "bb b/2 su n D p M g R s",
-  "theme": "bb s g, bx2 p M g M p M g, bx1 M g R s",
-  "alaap": "bb nl s, g R, M g, p M g M p M g, D M g, M g R s, g M p M g, n D p M g, M g R s, M D p su, n Ru su, gu Mu pu Mu gu, Ru n D p, p M g M p, M g R s"
+  "theme": "bb s g, bx2 p M g M p M g b/2, M g R s",
+  "alaap": "bb nl s, g R, M g, bx2 p M g M p M g b/2, D M g, M g R s, bx2 g M p M g b/2, n D p M g, M g R s, M D p su, n Ru su, bx2 gu Mu pu Mu gu b/2, Ru n D p, bx2 p M g M p b/2, M g R s"
 }
