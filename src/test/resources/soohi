@@ -1,0 +1,12 @@
+{
+  "name":"Soohi",
+  "group":"Bilawal",
+  "sonant":"p",
+  "consonant":"s",
+  "time":"late morning",
+  "bpm": 60,
+  "aaroha": "bb b/2 s r g m, r g m p, n d n su",
+  "avroha": "bb b/2 su N d p, N d p, m g, d p m g r, p m g r g r s",
+  "theme": "bb p, r g m p, g m, s r, nl s",
+  "alaap": "bb s, nl s, nl dl pl, nl dl nl s, r g, bx2 m g, r s, g m g r, g p b/2, N d p, bx2 m g r g p b/2, n d n su, ru gu mu gu ru su, pu mu gu ru su, su N d p m, N d p m g, bx2 p m g r g p b/2, p d, m p, g m, r g r s, s nl s"
+}
